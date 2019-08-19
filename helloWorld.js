@@ -1,11 +1,8 @@
-// console.log(process.argv);
-
-// console.log('hello world');
-
-args = process.argv;
-name = args.slice(2, 3);
-if (name.length > 0) {
-    console.log(`hello world ${name}!`);
-} else {
-    console.log('name not found');
-}
+exports.run = (commandLineArgs) => {
+    name = commandLineArgs.slice(2, 3);
+    if (name.length > 0) {
+        return `hello world ${name}!`;
+    } else {
+        return 'error: missing name';
+    }
+};
